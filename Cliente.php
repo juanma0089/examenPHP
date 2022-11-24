@@ -1,4 +1,5 @@
 <?php
+namespace app;
 class Cliente
 {
 
@@ -32,7 +33,7 @@ class Cliente
         return $this->numSoportesAlquilados;
     }
 
-    public function alquilar(Soporte $s): bool
+    public function alquilar(Soporte $s)
     {
         //compruebo que no está alquilado y que el número de alquileres es menor al máximo (por defecto es 3)
         if ($this->tieneAlquilado($s) === false && $this->getNumSoportesAlquilados() < $this->maxAlquilerConcurrente) {
@@ -41,26 +42,25 @@ class Cliente
         //lo meto en el array de alquilados 
             array_push($this->soportesAlquilados, $s);
 
-            echo "<br>Has alquilado " . $s->titulo;
+            echo "<br>Ha alquilado " . $s->titulo."<br>";
 
-            echo "<br>Tienes " . $this->numSoportesAlquilados . " productos alquilados<br>";
-
-            return true;
+            echo "Tiene " . $this->numSoportesAlquilados . " productos alquilados<br>";
 
         } else {
             // si el el producto ya está alquilado retorno false y no realizamos ninguna acción
             if($this->tieneAlquilado($s) == true){
 
-                echo  "<br>Ya tienes alquilado ". $s->titulo ."<br>";
+                echo  "<br>Ya tiene alquilado ". $s->titulo ."<br>";
                 
             }else{
 
-                echo  "<br>Has superado el máximo de alquileres<br>";
+                echo  "<br>Ha superado el máximo de alquileres<br>";
 
             }
             
-            return false;
         }
+        //* añadimos $this para para dar soporte al encadenamiento de métodos
+        return $this;
     }
 
     public function tieneAlquilado(Soporte $s): bool
@@ -81,7 +81,7 @@ class Cliente
     //y restamos del contador de alquilados 
                 $this->numSoportesAlquilados--;
 
-                echo "<br>Has devuelto " . $value->titulo . "<br>";
+                echo "<br>Ha devuelto " . $value->titulo . "<br>";
 
                 return true;
 
@@ -96,7 +96,7 @@ class Cliente
     public function listaAlquileres()
     {
         // Mostramos el número de productos alquilados
-        echo "<br>Tienes " . $this->numSoportesAlquilados . " productos alquilados";
+        echo "Tiene " . $this->numSoportesAlquilados . " productos alquilados";
         //Recorremos el array de productos alquilados, pasando el valor a muestra resumen para hacer el toString de cada producto
         foreach ($this->soportesAlquilados as $value) {
 

@@ -1,4 +1,7 @@
 <?php
+
+namespace app;
+
 include_once "Soporte.php";
 
 class Disco extends Soporte

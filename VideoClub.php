@@ -1,5 +1,7 @@
 <?php
 
+namespace app;
+
 include_once "Disco.php";
 include_once "Juego.php";
 include_once "Cliente.php";
@@ -98,6 +100,8 @@ class VideoClub
                 }
             }
         }   
+        //* añadimos $this para para dar soporte al encadenamiento de métodos
+        return $this;
     }
 }
 

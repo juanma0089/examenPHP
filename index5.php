@@ -1,6 +1,8 @@
 <?php
 include_once "VideoClub.php"; // No incluimos nada más
 
+use app\VideoClub;
+
 $vc = new Videoclub("Severo 8A"); 
 
 //voy a incluir unos cuantos soportes de prueba 
@@ -19,14 +21,15 @@ $vc->listarProductos();
 $vc->incluirSocio("Amancio Ortega"); 
 $vc->incluirSocio("Pablo Picasso", 2); 
 
-$vc->alquilaSocioProducto(1,2); 
-$vc->alquilaSocioProducto(1,3); 
-//alquilo otra vez el soporte 2 al socio 1. 
-// no debe dejarme porque ya lo tiene alquilado 
-$vc->alquilaSocioProducto(1,2); 
-//alquilo el soporte 6 al socio 1. 
-//no se puede porque el socio 1 tiene 2 alquileres como máximo 
-$vc->alquilaSocioProducto(1,6); 
+// $vc->alquilaSocioProducto(1,2); 
+// $vc->alquilaSocioProducto(1,3); 
+// //alquilo otra vez el soporte 2 al socio 1. 
+// // no debe dejarme porque ya lo tiene alquilado 
+// $vc->alquilaSocioProducto(1,2); 
+// //alquilo el soporte 6 al socio 1. 
+// //no se puede porque el socio 1 tiene 2 alquileres como máximo 
+// $vc->alquilaSocioProducto(1,6); 
+$vc->alquilaSocioProducto(1,2)->alquilaSocioProducto(1,3)->alquilaSocioProducto(1,2)->alquilaSocioProducto(1,6);
 
 //listo los socios 
 $vc->listarSocios();
