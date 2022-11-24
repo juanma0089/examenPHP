@@ -2,7 +2,9 @@
 //*creación de autoload ejercicio 7
 function autoloader($className){
 
-       include_once($className. ".php");
+       $directorio = str_replace("\\","/", $className);
+
+       include_once($directorio. ".php");
 
 }
 
