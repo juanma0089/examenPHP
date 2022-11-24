@@ -15,6 +15,7 @@ class Disco extends Soporte
 
     public function muestraResumen()
     {
+        //llamamos al muestra resumen del padre y lo sobreescribimos
         parent::muestraResumen();
         echo "Idiomas: " . $this->idiomas . "<br>
             Formato de pantalla: " . $this->formatPantalla . "<br>";

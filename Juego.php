@@ -31,13 +31,14 @@ class Juego extends Soporte
                 return "Juego de " . $this->minNumJugadores . " a " . $this->maxNumJugadores . " jugadores";
             }
         }else{
-            
+
             return "Error en el número de jugadores";
         }
     }
 
     public function muestraResumen()
     {
+        //llamamos al muestra resumen del padre y lo sobreescribimos
         parent::muestraResumen();
         echo "Consola: " . $this->consola . "<br>" .
             $this->muestraJugadoresPosibles() . "<br>";
