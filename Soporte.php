@@ -1,9 +1,15 @@
 <?php
-class Soporte
+abstract class Soporte
 {
+
+    //*Al hacer la clase abstracta no podemos crear objetos de esta clase, pero si hacer uso de ella mediante sus hijos, en index1 tengo que dejar comentado la primera parte
+    //*ya que nos crea un objeto de clase Soporte y no funciona 
+
     public $titulo;
     protected $numero;
     private $precio;
+
+    //php internamente a la constante privada ya la trata como static así que no hace falta ponerlo
     private const IVA = 0.21;
 
     public function __construct($titulo, $numero, $precio)
