@@ -12,6 +12,11 @@ use app\Disco;
 use app\Juego;
 use app\Cliente;
 use app\CintaVideo;
+use util\ClienteNoEncontradoException;
+use util\CupoSuperadoException;
+use util\SoporteNoEncontradoException;
+use util\SoporteYaAlquiladoException;
+
 class VideoClub
 {
     
@@ -91,23 +96,39 @@ class VideoClub
     public function alquilaSocioProducto($numeroCliente, $numeroSoporte)
     {
 
-        // recorremos el array de socios 
+        
+     try{      
+                 //recorremos el array de socios 
         foreach ($this->socios as $value) {
-        //comprobamos que el id del array es igual al del cliente que nos pasan para ver si existe 
-            if ($value->getNumero() == $numeroCliente) {
-        // si se cumple la condición recorremos el array de productos
-                foreach ($this->productos as $producto) {
-        // y comprobamos que el id coincida con el número que nos pasan
-                    if ( $producto->getNumero() == $numeroSoporte) {
-                        //si se cumple condición lo pasamos a la función alquilar 
-                        $value->alquilar($producto);
-                    }
+                        //comprobamos que el id del array es igual al del cliente que nos pasan para ver si existe 
+                if ($value->getNumero() == $numeroCliente) {
+                        // si se cumple la condición recorremos el array de productos
+                    try {
+
+                        foreach ($this->productos as $producto) {
+                        // y comprobamos que el id coincida con el número que nos pasan
+                            if ( $producto->getNumero() == $numeroSoporte) {
+                            //si se cumple condición lo pasamos a la función alquilar 
+                                $value->alquilar($producto);
+                                //*método encadenados
+                                return $this;
+                            }
+                        }
+                        //*capturamos el error
+                    }catch (SoporteYaAlquiladoException $e) {
+                            echo $e->mensajeError();
+                    }catch (CupoSuperadoException $e) {
+                               echo $e->mensajeError();
+                    } 
                 }
-            }
-        }   
-        //* añadimos $this para para dar soporte al encadenamiento de métodos
-        return $this;
-    }
-}
+            }  
+        }catch (ClienteNoEncontradoException $e) {
+            echo $e->mensajeError();
+    }   
+    //*método encadenados
+        return $this;   
+    }       
+} 
+
 
 ?>

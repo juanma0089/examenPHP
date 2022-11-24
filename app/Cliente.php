@@ -1,5 +1,10 @@
 <?php
 namespace app;
+
+use util\CupoSuperadoException;
+use util\SoporteNoEncontradoException;
+use util\SoporteYaAlquiladoException;
+
 class Cliente
 {
 
@@ -50,11 +55,13 @@ class Cliente
             // si el el producto ya está alquilado retorno false y no realizamos ninguna acción
             if($this->tieneAlquilado($s) == true){
 
-                echo  "<br>Ya tiene alquilado ". $s->titulo ."<br>";
+                throw new SoporteYaAlquiladoException("<br>Ya tiene alquilado ". $s->titulo ." (mensaje dado desde una exception)<br>");
+                //*lanzamos el codigo error si ya está alquilado (recogido en videoClub)
                 
             }else{
 
-                echo  "<br>Ha superado el máximo de alquileres<br>";
+                throw new CupoSuperadoException("<br>Ha superado el máximo de alquileres  (mensaje dado desde una exception)<br>");
+                //*lanzamos el codigo error si ya ha superado el máximo de alquileres posibles (recogido en videoClub)
 
             }
             
@@ -87,10 +94,8 @@ class Cliente
 
             }
         }
-
-        echo "<br>No se puede devolver el producto, no lo tienes alquilado<br>";
-
-        return false;
+        throw new SoporteNoEncontradoException("<br>No se puede devolver el producto, no lo tienes alquilado<br>");
+        //*lanzamos el codigo error si no ha encontrado el producto en alquilado
     }
 
     public function listaAlquileres()
