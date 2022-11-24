@@ -1,5 +1,8 @@
 <?php
-abstract class Soporte
+//* include del punto 6. Al ya haber sido incluida en Soporte, sus hijos ya lo integran por lo cual no es necesario hacer el include en cada uno de ellos
+//*También obliga a llevar la función muestraResumen a todos
+include_once "Resumible.php"; 
+abstract class Soporte implements Resumible
 {
 
     //*Al hacer la clase abstracta no podemos crear objetos de esta clase, pero si hacer uso de ella mediante sus hijos, en index1 tengo que dejar comentado la primera parte
