@@ -1,9 +1,10 @@
 <?php
 
 namespace app;
-
-include_once "Soporte.php";
-
+// *comento los includes para poder hacer función de autoload.php
+// include_once "Soporte.php";
+include_once "autoload.php";
+use app\Soporte;
 class Disco extends Soporte
 {
     public $idiomas;

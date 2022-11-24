@@ -6,8 +6,9 @@
 // echo "<br>Precio: " . $soporte1->getPrecio() . " euros"; 
 // echo "<br>Precio IVA incluido: " . $soporte1->getPrecioConIVA() . " euros";
 // $soporte1->muestraResumen();
-
-include "CintaVideo.php";
+// *comento los includes para poder hacer función de autoload.php
+// include_once "CintaVideo.php";
+include_once "autoload.php";
 
 use app\CintaVideo;
 

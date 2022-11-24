@@ -4,7 +4,11 @@ namespace app;
 
 //*include del punto 6. Al ya haber sido incluida en Soporte (PADRE), sus hijos ya lo integran por herencia, por lo cual no es necesario hacer el include en cada uno de ellos
 //*También obliga a llevar la función muestraResumen a todos
-include_once "Resumible.php"; 
+
+// include_once "Resumible.php"; 
+include_once "autoload.php";
+
+use app\Resumible;
 abstract class Soporte implements Resumible
 {
 

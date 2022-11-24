@@ -1,5 +1,7 @@
 <?php
-include_once "VideoClub.php"; // No incluimos nada más
+// *comento los includes para poder hacer función de autoload.php
+// include_once "VideoClub.php"; // No incluimos nada más
+include_once "autoload.php";
 
 use app\VideoClub;
 

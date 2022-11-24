@@ -1,5 +1,9 @@
 <?php
-include "Juego.php";
+
+// *comento los includes para poder hacer función de autoload.php
+// include_once "Juego.php";
+include_once "autoload.php";
+
 use app\Juego;
 
 $miJuego = new Juego("God of War: Ragnarök", 26, 49.99, "PS4", 1, 1); 
