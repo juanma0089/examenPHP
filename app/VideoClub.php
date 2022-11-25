@@ -135,7 +135,6 @@ class VideoClub
         return $this;
     }
 
-    // ! aqui termino revisar mañana 
     public function alquilarSocioProductos(int $numSocio, array $numerosProductos)
     {
         $libre = true;
