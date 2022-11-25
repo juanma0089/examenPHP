@@ -19,6 +19,8 @@ abstract class Soporte implements Resumible
     protected $numero;
     private $precio;
 
+    public $alquilado = false;
+
     //php internamente a la constante privada ya la trata como static así que no hace falta ponerlo
     private const IVA = 0.21;
 

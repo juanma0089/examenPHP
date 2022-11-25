@@ -46,10 +46,13 @@ class Cliente
             $this->numSoportesAlquilados++;
         //lo meto en el array de alquilados 
             array_push($this->soportesAlquilados, $s);
+            //*variable del paso 9
+            $s->alquilado = true;
 
             echo "<br>Ha alquilado " . $s->titulo."<br>";
 
             echo "Tiene " . $this->numSoportesAlquilados . " productos alquilados<br>";
+                
 
         } else {
             // si el el producto ya está alquilado retorno false y no realizamos ninguna acción
@@ -89,6 +92,8 @@ class Cliente
                 $this->numSoportesAlquilados--;
 
                 echo "<br>Ha devuelto " . $value->titulo . "<br>";
+                //*variable del paso 9
+                $value->alquilado = false;
 
                 return true;
 
