@@ -5,7 +5,7 @@ namespace app;
 // include_once "Soporte.php";
 include_once "autoload.php";
 
-use  app\soporte;
+use  app\Soporte;
 class Juego extends Soporte
 {
     public $consola;
