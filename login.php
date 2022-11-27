@@ -1,9 +1,11 @@
 <?php  
+
 //*iniciamos sesión
 session_start();
-
 include_once "autoload.php";
 include_once "index5.php";
+
+
 
 $userName = $_POST['loginName']?? "";
 $passwordUser = $_POST['loginPassword']?? "";
@@ -18,8 +20,6 @@ $passwordUser = $_POST['loginPassword']?? "";
 
     }elseif($userName === "admin" && $passwordUser === "admin"){
         
-        //*iniciamos sesión
-        session_start();
         //* guardamos en el array de session el nombre de usuario introducido
         $_SESSION["userName"] =  $userName;
         $_SESSION["socio"] = $vc->getSocios();

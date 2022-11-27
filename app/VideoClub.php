@@ -40,9 +40,10 @@ class VideoClub
         // al crear un producto lo incluimos en el array de productos
         array_push($this->productos, $producto);
 
-        echo "<br>Se ha introducido un nuevo producto<br>
+        $string = "<br>Se ha introducido un nuevo producto<br>
         Nombre: " . $producto->titulo . " ID: " . $this->numProductos . "<br>";
 
+        return $string;
 
     }
 
@@ -77,9 +78,11 @@ class VideoClub
 
         array_push($this->socios, $cliente);
 
-        echo "<br> Se ha creado un nuevo socio<br>
+        $tring = "<br> Se ha creado un nuevo socio<br>
         Nombre: " . $nombre . " con el número de socio " . $this->numSocios . "<br>";
         $this->numSocios++;
+
+        return $tring;
 
     }
     public function listarProductos()
