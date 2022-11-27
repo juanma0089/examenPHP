@@ -1,9 +1,10 @@
 <?php
+include_once "autoload.php";
+use app\VideoClub;
 session_start();
 //* iniciamos sesión
-include_once "autoload.php";
 
-use app\VideoClub;
+
 
 
 ?>
@@ -51,7 +52,7 @@ use app\VideoClub;
                     </thead>
                     <tbody class="table-group-divider">
                         <?php
-                        //* recorrecos array de socios en el  mostramos el id y el nombre
+                       
                         echo "<tr class='table-primary'>";
                         foreach ($socio as $value) {
 
@@ -71,13 +72,12 @@ use app\VideoClub;
                         </tr>
                     </thead>
                     <tbody class="table-group-divider">
-                    //* recorrecos array de soporte en el  mostramos el resumen de todos sus datos
                             <?php 
                             foreach ($soporte as $value) {
                                
                                 echo "<td bg-danger>";
     
-                                $value->muestraResumen();
+                               echo $value->muestraResumen();
     
                                 echo "</td>";
                             }

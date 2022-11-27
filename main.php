@@ -17,10 +17,7 @@
 
 <body>
     <?php
-
-
-    //* iniciamos sesión 
-    session_start();
+    
     $userName = $_SESSION["userName"] ?? "";
 
     //*comprobamos que haya introducido los datos
