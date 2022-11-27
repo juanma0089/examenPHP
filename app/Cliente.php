@@ -106,21 +106,20 @@ class Cliente
     public function listaAlquileres()
     {
         // Mostramos el número de productos alquilados
-        echo "Tiene " . $this->numSoportesAlquilados . " productos alquilados";
+         $string = "Tiene " . $this->numSoportesAlquilados . " productos alquilados";
         //Recorremos el array de productos alquilados, pasando el valor a muestra resumen para hacer el toString de cada producto
         foreach ($this->soportesAlquilados as $value) {
 
-            $value->muestraResumen();
+            return $value->muestraResumen().$string;
         }
     }
 
     public function muestraResumen()
     {
 
-        echo "</br><strong>" . $this->nombre . "</strong><br>
-            Número: " . $this->numero . "<br>";
+        $string = "</br><strong>" . $this->nombre . "</strong><br> Número: " . $this->numero . "<br>";
 
-            $this->listaAlquileres();
+           return $this->listaAlquileres() . $string;
     }
 }
 

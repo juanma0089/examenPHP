@@ -1,10 +1,11 @@
 <?php
+session_start();
+//* iniciamos sesión
 include_once "autoload.php";
 
 use app\VideoClub;
 
-session_start();
-//* iniciamos sesión
+
 ?>
 
 
