@@ -49,9 +49,9 @@ class Cliente
             //*variable del paso 9
             $s->alquilado = true;
 
-            echo "<br>Ha alquilado " . $s->titulo."<br>";
+            // echo "<br>Ha alquilado " . $s->titulo."<br>";
 
-            echo "Tiene " . $this->numSoportesAlquilados . " productos alquilados<br>";
+            // echo "Tiene " . $this->numSoportesAlquilados . " productos alquilados<br>";
                 
 
         } else {
@@ -91,7 +91,7 @@ class Cliente
     //y restamos del contador de alquilados 
                 $this->numSoportesAlquilados--;
 
-                echo "<br>Ha devuelto " . $value->titulo . "<br>";
+                // echo "<br>Ha devuelto " . $value->titulo . "<br>";
                 //*variable del paso 9
                 $value->alquilado = false;
 

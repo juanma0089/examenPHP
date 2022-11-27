@@ -17,7 +17,7 @@ $vc->incluirCintaVideo("Los cazafantasmas", 3.5, 107);
 $vc->incluirCintaVideo("El nombre de la Rosa", 1.5, 140); 
 
 //listo los productos 
-$vc->listarProductos(); 
+// $vc->listarProductos(); 
 
 //voy a crear algunos socios 
 $vc->incluirSocio("Amancio Ortega"); 
@@ -33,10 +33,10 @@ $vc->incluirSocio("Pablo Picasso", 2);
 // $vc->alquilaSocioProducto(1,6); 
 // $vc->alquilaSocioProducto(1,2)->alquilaSocioProducto(1,3)->alquilaSocioProducto(1,2)->alquilaSocioProducto(1,6);
 
-$vc->alquilarSocioProductos(0, [2,3,6])->alquilarSocioProductos(1, [2]);
+$vc->alquilarSocioProductos(0, [2,3,6])->alquilaSocioProducto(1,4);
 
 //*Comprobación punto 9
 $vc->devolverSocioProducto(0, 2)->devolverSocioProductos(0, [3,6]);
 //listo los socios 
-$vc->listarSocios();
+// $vc->listarSocios();
 // how to create database?

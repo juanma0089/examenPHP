@@ -17,18 +17,17 @@
 
 <body>
     <?php
-    
+
     $userName = $_SESSION["userName"] ?? "";
 
     //*comprobamos que haya introducido los datos
     if ($userName == "usuario") { ?>
     <div class="container text-center">
         <div class="alert alert-primary" role="alert">
-            //*damos la bienvenida y mostramos nombre del usuario intrudcido
             <strong>Bienvenido
             <?php echo $userName ?></strong>   
         </div>
-        //*creamos boton cerrar sesión nos redirecciona a logout.php
+       
        <a href="./logout.php"><button class="btn btn-primary" >cerrar sesion</button></a> 
     </div>
     <?php } else { ?>
