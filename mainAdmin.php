@@ -50,6 +50,7 @@ session_start();
                     </thead>
                     <tbody class="table-group-divider">
                         <?php
+                        //* recorrecos array de socios en el  mostramos el id y el nombre
                         echo "<tr class='table-primary'>";
                         foreach ($socio as $value) {
 
@@ -69,6 +70,7 @@ session_start();
                         </tr>
                     </thead>
                     <tbody class="table-group-divider">
+                    //* recorrecos array de soporte en el  mostramos el resumen de todos sus datos
                             <?php 
                             foreach ($soporte as $value) {
                                
@@ -84,12 +86,11 @@ session_start();
 
                 </table> 
                 </div>
-            </div>   <!--  -->
+            </div>  
        
-
         </div>
     <?php } else { ?>
-
+    <!-- Controlamos que haya iniciado sesión  -->
         <div class="container text-center">
             <div class="alert alert-primary text-center" role="alert">
                 <strong>No has iniciado sesión</strong>

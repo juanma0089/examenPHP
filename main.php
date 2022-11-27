@@ -32,7 +32,7 @@
        <a href="./logout.php"><button class="btn btn-primary" >cerrar sesion</button></a> 
     </div>
     <?php } else { ?>
-        //*si no se ha iniciado sesión damos el mensaje y enlace al index para iniciarlo
+        <!-- Controlamos que haya iniciado sesión  -->
     <div class="container text-center">
         <div class="alert alert-primary text-center" role="alert">
             <strong>No has iniciado sesión</strong>

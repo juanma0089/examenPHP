@@ -28,8 +28,5 @@ $passwordUser = $_POST['loginPassword']?? "";
     }else{
         header("location:index.php?error=true");
     }
-        
-        
-
-    
+           
 ?>
