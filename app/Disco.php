@@ -21,7 +21,7 @@ class Disco extends Soporte
     {
 
         $string = "Idiomas: " . $this->idiomas . "<br>
-        Formato de pantalla: " . $this->formatPantalla . "<br>";
+        Formato de pantalla: " . $this->getFormatPantalla() . "<br>";
 
         //llamamos al muestra resumen del padre y lo sobreescribimos
         return parent::muestraResumen() . $string;
