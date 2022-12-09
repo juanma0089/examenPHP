@@ -50,7 +50,7 @@ abstract class Soporte implements Resumible
     {
          $string =  "</br><strong>" . $this->titulo . "</strong><br>
             Número: " . $this->numero . "<br>
-            Precio: " . $this->precio . " €<br>
+            Precio: " . $this-getPrecio() . " €<br>
             Precio IVA incluido: " . $this->getPrecioConIva() . " €<br>";
 
             return $string;
