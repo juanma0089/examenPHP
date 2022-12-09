@@ -29,11 +29,11 @@ class Juego extends Soporte
             if ($this->minNumJugadores == $this->maxNumJugadores) {
 
 //  hago un ternario y digo que si es igual a 1 es para 1 jugador y sino para x jugadores
-                return $this->minNumJugadores == 1 ? "Juego para un jugador" : "Juego para " . $this->minNumJugadores . " jugadores";
+                return $this->minNumJugadores == 1 ? "Juego para un jugador" : "Juego para " . $this->getMinNumJugadores() . " jugadores";
 
             } else {
 
-                return "Juego de " . $this->minNumJugadores . " a " . $this->maxNumJugadores . " jugadores";
+                return "Juego de " . $this->getMinNumJugadores() . " a " . $this->getMaxNumJugadores() . " jugadores";
             }
         }else{
 
